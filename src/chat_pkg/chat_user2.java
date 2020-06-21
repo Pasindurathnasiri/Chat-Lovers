@@ -94,7 +94,7 @@ public class chat_user2 extends javax.swing.JFrame {
 
     private void send_u2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_send_u2ActionPerformed
         // TODO add your handling code here:
-        System.out.println("Hi");
+        System.out.println("Hi hello");
     }//GEN-LAST:event_send_u2ActionPerformed
 
     /**
