@@ -104,10 +104,15 @@ public class chat_user1 extends javax.swing.JFrame {
     private void send_u1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_send_u1ActionPerformed
 
         // TODO add your handling code here:
+        String secretKey = "secrete";
         try {
+             AESEncryptionDecryption Encmsg = new AESEncryptionDecryption();
             String msg ="";
             msg = msg_text.getText();
-            dout.writeUTF(msg);
+             String Enc_msg1 = Encmsg.encrypt(msg, secretKey);
+             
+            dout.writeUTF(Enc_msg1);
+             System.out.println("User 1 Encrypted Msg: "+Enc_msg1);
             msg_text.setText("");
             
             
@@ -150,17 +155,21 @@ public class chat_user1 extends javax.swing.JFrame {
                 new chat_user1().setVisible(true);
             }
         });
+        String secretKey  = "secrete";
         
         try{
         String msg1in="";
-
+        
+        AESEncryptionDecryption Encmsg = new AESEncryptionDecryption();
         s = new Socket("127.0.0.1",1201); // ip address is pf localhost
         dis = new DataInputStream(s.getInputStream());     
         dout= new DataOutputStream(s.getOutputStream());
         
         while(!msg1in.equals("exit")){
+           
             msg1in = dis.readUTF();
-            msg_area.setText(msg_area.getText()+"\n user 1 : "+msg1in);
+            String Dec_msg2 = Encmsg.decrypt(msg1in, secretKey);
+            msg_area.setText(msg_area.getText()+"\n user 1 : "+Dec_msg2);
             
         }
         
