@@ -152,15 +152,15 @@ public class chat_user1 extends javax.swing.JFrame {
         });
         
         try{
-        String msg2in="";
+        String msg1in="";
 
         s = new Socket("127.0.0.1",1201); // ip address is pf localhost
         dis = new DataInputStream(s.getInputStream());     
         dout= new DataOutputStream(s.getOutputStream());
         
-        while(!msg2in.equals("exit")){
-            msg2in = dis.readUTF();
-            msg_area.setText(msg_area.getText()+"\n user 1 : "+msg2in);
+        while(!msg1in.equals("exit")){
+            msg1in = dis.readUTF();
+            msg_area.setText(msg_area.getText()+"\n user 1 : "+msg1in);
             
         }
         
