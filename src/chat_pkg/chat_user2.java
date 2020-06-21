@@ -5,12 +5,22 @@
  */
 package chat_pkg;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+
 /**
  *
  * @author Pasindu
  */
 public class chat_user2 extends javax.swing.JFrame {
 
+    
+    static ServerSocket ss;
+    static Socket s;
+    static DataInputStream dis;
+    static DataOutputStream dout;
     /**
      * Creates new form chat_user2
      */
@@ -94,7 +104,14 @@ public class chat_user2 extends javax.swing.JFrame {
 
     private void send_u2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_send_u2ActionPerformed
         // TODO add your handling code here:
-        System.out.println("Hi hello");
+        try{
+        String msg = "";
+        msg=msg_text.getText();
+        dout.writeUTF(msg);
+        msg_text.setText("");
+        }catch(Exception e){
+            //handle exception
+        }
     }//GEN-LAST:event_send_u2ActionPerformed
 
     /**
@@ -130,6 +147,22 @@ public class chat_user2 extends javax.swing.JFrame {
                 new chat_user2().setVisible(true);
             }
         });
+        try{
+        String msg2in="";
+        ss = new ServerSocket(1201);
+        s=ss.accept();
+        dis = new DataInputStream(s.getInputStream());     
+        dout= new DataOutputStream(s.getOutputStream());
+        
+        while(!msg2in.equals("exit")){
+            msg2in = dis.readUTF();
+            msg_area.setText(msg_area.getText()+"\n user 2:"+msg2in);
+            
+        }
+        
+        }catch(Exception e){
+            //handle the exeptions here
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
