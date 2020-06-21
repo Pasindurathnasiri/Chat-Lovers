@@ -109,6 +109,7 @@ public class chat_user2 extends javax.swing.JFrame {
         msg=msg_text.getText();
         dout.writeUTF(msg);
         msg_text.setText("");
+        
         }catch(Exception e){
             //handle exception
         }
@@ -156,7 +157,7 @@ public class chat_user2 extends javax.swing.JFrame {
         
         while(!msg2in.equals("exit")){
             msg2in = dis.readUTF();
-            msg_area.setText(msg_area.getText()+"\n user 2:"+msg2in);
+            msg_area.setText(msg_area.getText()+"\n user 2 : "+msg2in);
             
         }
         
