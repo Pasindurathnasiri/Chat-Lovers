@@ -104,10 +104,18 @@ public class chat_user2 extends javax.swing.JFrame {
 
     private void send_u2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_send_u2ActionPerformed
         // TODO add your handling code here:
+        String secretKey = "secrete";
+        
+        
+       
         try{
+            
+        AESEncryptionDecryption Encmsg = new AESEncryptionDecryption();
         String msg = "";
         msg=msg_text.getText();
-        dout.writeUTF(msg);
+        String Enc_msg2 = Encmsg.encrypt(msg, secretKey);
+        dout.writeUTF(Enc_msg2);
+        System.out.println("User 2 Encrypted Msg: "+Enc_msg2);
         msg_text.setText("");
         
         }catch(Exception e){
@@ -148,16 +156,22 @@ public class chat_user2 extends javax.swing.JFrame {
                 new chat_user2().setVisible(true);
             }
         });
+        
+         String secretKey  = "secrete";
+       
         try{
         String msg2in="";
+        AESEncryptionDecryption Encmsg = new AESEncryptionDecryption();
         ss = new ServerSocket(1201);
         s=ss.accept();
         dis = new DataInputStream(s.getInputStream());     
         dout= new DataOutputStream(s.getOutputStream());
         
         while(!msg2in.equals("exit")){
+            
             msg2in = dis.readUTF();
-            msg_area.setText(msg_area.getText()+"\n user 2 : "+msg2in);
+            String Dec_msg1 = Encmsg.decrypt(msg2in, secretKey);
+            msg_area.setText(msg_area.getText()+"\n user 2 : "+Dec_msg1);
             
         }
         
