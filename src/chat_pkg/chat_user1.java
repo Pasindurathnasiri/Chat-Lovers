@@ -65,7 +65,6 @@ public class chat_user1 extends javax.swing.JFrame {
 
         send_u1.setBackground(new java.awt.Color(204, 255, 204));
         send_u1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        send_u1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Menushi Lakshika\\Downloads\\sendic.png")); // NOI18N
         send_u1.setText(" Send");
         send_u1.setBorder(new javax.swing.border.MatteBorder(null));
         send_u1.addActionListener(new java.awt.event.ActionListener() {
@@ -77,7 +76,6 @@ public class chat_user1 extends javax.swing.JFrame {
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Menushi Lakshika\\Desktop\\Academic\\New folder\\User-icon.png")); // NOI18N
         jLabel1.setText("USER 01");
 
         jTextPane1.setEditable(false);
@@ -124,7 +122,7 @@ public class chat_user1 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 277, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane1)
@@ -223,10 +221,6 @@ public class chat_user1 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
